@@ -10,7 +10,7 @@
 const a = (num) => {
 	let params = 'writer=${sessionScope.loginId}';
 	params += '&content='+document.getElementById('cont_'+num).value;
-	params += '&imgnum='+num;
+	params += '&imgBoardNum='+num;
 	alert(params);
 	
 	const req = new XMLHttpRequest();
@@ -22,7 +22,7 @@ const a = (num) => {
 		}
 		document.getElementById('reps_'+num).innerHTML = txt;
 	}
-	req.open('post', '${pageContext.request.contextPath }/reps/add');
+	req.open('post', '${pageContext.request.contextPath }/rep/add');
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	req.send(params);
 	document.getElementById('cont_'+num).value = '';
